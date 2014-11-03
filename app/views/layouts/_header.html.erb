@@ -1,12 +1,22 @@
-<div id='header' class='ui top sidebar'>
-  <div class='item'>NarrowContent</div>
-  <div class='floated right'>
+<div id="header" class="ui fixed main menu">
+  <div class="container">
+    <a class="launch item">
+      <%= semantic_icon("list layout") %>
+      TeamTime
+    </a>
     <% if current_user || user_signed_in? %>
-    <%= current_user.email %>
+    <%= link_to destroy_user_session_path, html_options = {method: :delete } do %>
+    <div class="ui right item" id='login'>
+      <div class='text'><%= current_user.email %> | Logout</div>
+    </div>
+    <% end %>
     <% else %>
-    <% link_to '#' do %>
-    Register
+    <%= link_to new_user_session_path do %>
+    <div class="ui right item" id='login'>
+      <div class='text'>Login</div>
+    </div>
     <% end %>
     <% end %>
   </div>
+</div>
 </div>

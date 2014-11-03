@@ -2,7 +2,7 @@ var ready;
 
 ready = function() {
 
-  $('#header').sidebar('show');
+//  $('#header').sidebar('show');
 
   // // section1 animations
 
