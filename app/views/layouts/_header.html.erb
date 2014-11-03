@@ -1,0 +1,12 @@
+<div id='header' class='ui top sidebar'>
+  <div class='item'>NarrowContent</div>
+  <div class='floated right'>
+    <% if current_user || user_signed_in? %>
+    <%= current_user.email %>
+    <% else %>
+    <% link_to '#' do %>
+    Register
+    <% end %>
+    <% end %>
+  </div>
+</div>
