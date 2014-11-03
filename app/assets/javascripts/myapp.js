@@ -3,8 +3,14 @@ var ready;
 ready = function() {
 
   $('.jointeam').on('click', function(e){
+    var id = $(this).data("id");
     e.preventDefault;
-    alert('test');
+    $.ajax({
+      // type: "POST",
+      // url: "/teams/" + id,
+      // data: {_method:"PUT", }
+    });
+    alert(id);
   });
 
 }

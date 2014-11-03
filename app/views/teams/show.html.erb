@@ -4,9 +4,9 @@
     <strong>Name:</strong>
     <b class='blue'><%= @team.name %></b>
   </p>
-  <%= link_to '#', :class => 'jointeam' do %>
-  <div class='ui button'>Join This Team</div><br>
+  <%= link_to '#', :class => 'jointeam', :data => {:id =>  @team.id} do %>
+  <div class='ui button'>Join This Team</div>
+  <% end %><br>
 </div>
-<% end %>
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
