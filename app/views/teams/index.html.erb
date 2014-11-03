@@ -8,7 +8,6 @@
           <th>Status</th>
         </tr>
       </thead>
-
       <tbody>
         <% @teams.each do |team| %>
         <tr>
@@ -16,7 +15,7 @@
           <% team.memberships.each do |m| %>
             <% if m.user_id == current_user.id %>
               <td><b class='green'>part of </b></td>
-            <% elsif m.user_id != current_user.id %>
+            <% elsif %>
               <td><b class='yellow'>not part of </b></td>
             <% end %>
           <% end %>
