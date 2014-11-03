@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-teams = Team.create([{name: 'Knights of Omniscience'}, {name: "Disciples of the Red Mist"}])
+teams = Team.create([{name: "Knights of Omniscience"}, {name: "Disciples of the Red Mist"}])
