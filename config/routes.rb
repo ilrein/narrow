@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :teams do 
     post 'join', on: :member
+    post 'leave', on: :member
   end
   root 'teams#index'
   devise_for :users

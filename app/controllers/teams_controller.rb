@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: [:show, :edit, :update, :destroy, :join]
+  before_action :set_team, only: [:show, :edit, :update, :destroy, :join, :leave]
   before_action :authenticate_user!
   # GET /teams
   # GET /teams.json
@@ -67,6 +67,12 @@ class TeamsController < ApplicationController
     redirect_to root_url
   end    
 
+  def leave
+    @membership = Membership.where(team: @team, user: current_user.id)
+    @membership.destroy_all
+    redirect_to root_url
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_team
@@ -77,4 +83,4 @@ class TeamsController < ApplicationController
     def team_params
       params.require(:team).permit(:name)
     end
-end
+  end

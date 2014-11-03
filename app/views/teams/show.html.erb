@@ -4,9 +4,19 @@
     <strong>Name:</strong>
     <b class='blue'><%= @team.name %></b>
   </p>
+  <% @team.memberships.each do |m| %>
+  <% if m.user_id == current_user.id %>
+  <%= link_to leave_team_path, :class => 'jointeam', :data => {:id =>  @team.id, :user => current_user.id}, :method => :destroy do %>
+  <div class='ui button'>Leave This Team</div>
+  <% end %>
+  <% else %>
   <%= link_to join_team_path, :class => 'jointeam', :data => {:id =>  @team.id, :user => current_user.id}, :method => :post do %>
   <div class='ui button'>Join This Team</div>
-  <% end %><br>
+  <% end %>
+  <% end %>
+  <% end %>
+
+  <br>
 </div>
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
