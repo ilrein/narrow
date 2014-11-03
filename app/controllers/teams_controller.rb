@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: [:show, :edit, :update, :destroy]
+  before_action :set_team, only: [:show, :edit, :update, :destroy, :join]
   before_action :authenticate_user!
   # GET /teams
   # GET /teams.json
@@ -60,6 +60,12 @@ class TeamsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def join
+    membership = Membership.new(team: @team, user: current_user)
+    current_user.memberships << membership 
+    redirect_to root_url
+  end    
 
   private
     # Use callbacks to share common setup or constraints between actions.

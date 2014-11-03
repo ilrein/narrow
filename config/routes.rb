@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :teams
+  resources :teams do 
+    post 'join', on: :member
+  end
   root 'teams#index'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
