@@ -1,0 +1,21 @@
+<div class='ui segment'>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @task.name %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @task.completed %>
+</p>
+
+<%= form_for @task, :method => :put do |f| %>
+  <%= f.hidden_field :completed, :value => true %>
+  <%= f.submit 'I Finished This Task' %>
+<% end %>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
+</div>

@@ -1,8 +1,10 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do    
+  resources :tasks
   resources :teams do 
     post 'join', on: :member
     post 'leave', on: :member
   end
+  get 'manage' => 'teams#manage'
   root 'teams#index'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

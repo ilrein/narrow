@@ -5,5 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+tasks = Task.create([{name: 'Take out the garbage'}, {name: 'Buy milk'}])
 teams = Team.create([{name: "Knights of Omniscience"}, {name: "Disciples of the Red Mist"}])

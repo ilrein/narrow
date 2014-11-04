@@ -4,7 +4,7 @@
     <strong>Name:</strong>
     <b class='blue'><%= @team.name %></b>
   </p>
-    <%= link_to join_team_path, :class => 'jointeam', :data => {:id =>  @team.id, :user => current_user.id}, :method => :post do %>
+  <%= link_to join_team_path, :class => 'jointeam', :data => {:id =>  @team.id, :user => current_user.id}, :method => :post do %>
   <div class='ui mini button'>Join This Team</div><br>
   <% end %>
   <% @team.memberships.each do |m| %>
