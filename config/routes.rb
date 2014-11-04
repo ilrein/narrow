@@ -1,5 +1,6 @@
 Rails.application.routes.draw do    
   resources :tasks
+  get 'completed_tasks' => "tasks#completed"
   resources :teams do 
     post 'join', on: :member
     post 'leave', on: :member
