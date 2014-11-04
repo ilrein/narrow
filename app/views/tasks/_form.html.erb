@@ -1,23 +1,28 @@
 <div class='ui center aligned segment'>
-<%= form_for(@task) do |f| %>
+  <%= form_for(@task) do |f| %>
   <% if @task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
-      <ul>
+    <ul>
       <% @task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  <div class="field">
+  <%= f.label "who's responsible for this task (by user_id): " %><br>
+    <%= f.text_field :user_id %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
 </div>

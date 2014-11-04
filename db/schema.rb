@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104002615) do
+ActiveRecord::Schema.define(version: 20141104011752) do
 
   create_table "memberships", force: true do |t|
     t.integer  "user_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20141104002615) do
     t.datetime "updated_at"
     t.string   "name"
     t.boolean  "completed",  default: false
+    t.integer  "user_id",    default: 1
   end
 
   create_table "teams", force: true do |t|
