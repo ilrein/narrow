@@ -1,5 +1,5 @@
-class DropTableTasks < ActiveRecord::Migration
+class CreateTableTasks < ActiveRecord::Migration
   def change
-    drop_table :tasks
+    create_table :tasks
   end
 end
